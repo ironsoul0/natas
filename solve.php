@@ -1,5 +1,7 @@
 <?php
 
+GLOBAL $ecnrypted_data;
+
 $encrypted_data = "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D";
 $original_array = array("showpassword" => "no", "bgcolor" => "#ffffff");
 $encoded_json = json_encode($original_array);
