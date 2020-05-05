@@ -5,9 +5,7 @@ include 'logging.php';
 $allowedExtensions = ['gif', 'jpg'];
 
 $fName = $_FILES['imageUpload']['name'];
-$fSize = $_FILES['imageUpload']['name'];
 $fTmp = $_FILES['imageUpload']['tmp_name'];
-$fType = $_FILES['imageUpload']['type'];
 $fExt = strtolower(end(explode('.', $fName)));
 
 $uploadPath = 'uploads/' . basename($fName);
